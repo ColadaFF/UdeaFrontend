@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, Link, browserHistory} from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 import AppComponent from './components/main/appComponent';
 import TeachersForm  from './components/forms/teachers/teachersFormComponent';
 import RoomsForm  from './components/forms/rooms/roomsFormComponent';

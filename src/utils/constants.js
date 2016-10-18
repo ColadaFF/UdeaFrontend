@@ -28,11 +28,23 @@ export const itemsIdType = [
 
 export const itemsRoomType = [
     {
-        value: 'catedra',
-        text: 'Catedra'
+        value: 'auditorium',
+        text: 'Auditorio'
     },
     {
-        value: 'lab',
+        value: 'computersRoom',
+        text: 'Sala de computo'
+    },
+    {
+        value: 'drawingRoom',
+        text: 'Sala de dibujo'
+    },
+    {
+        value: 'specialRoom',
+        text: 'Aula especial'
+    },
+    {
+        value: 'labRoom',
         text: 'Laboratorio'
     }
 ];

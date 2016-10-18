@@ -5,6 +5,8 @@ import {itemsRoomType} from '../../../utils/constants';
 import {Row, Col} from 'react-flexbox-grid';
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
+import {connect} from 'react-redux';
+import _ from 'lodash';
 
 const styles = {
     button: {
@@ -22,7 +24,8 @@ class RoomsForm extends Component {
     }
 
     render() {
-        const {handleSubmit} = this.props;
+        const {handleSubmit, fieldValues} = this.props;
+        const capacityText = _.isEqual(_.get(fieldValues, 'type'), "computersRoom") ? "Número de computadores" : "Capacidad";
         return (
             <Row>
                 <Col xs={8} xsOffset={2}>
@@ -37,7 +40,7 @@ class RoomsForm extends Component {
                                         </Col>
                                         <Col xs={6}>
                                             <Field name="capacity" type="number" component={renderTextField}
-                                                   label="Capacidad"/>
+                                                   label={capacityText}/>
                                         </Col>
                                         <Col xs={6}>
                                             <Field
@@ -47,6 +50,14 @@ class RoomsForm extends Component {
                                             >
                                                 {mapItemsSelect(itemsRoomType)}
                                             </Field>
+                                        </Col>
+                                        <Col xs={6}>
+                                            <Field
+                                                name="observations"
+                                                component={renderTextField}
+                                                label="Observaciones"
+                                                multiLine={true}
+                                                rows={2}/>
                                         </Col>
                                     </Row>
                                     <RaisedButton style={styles.button} type="submit" label="Guardar"/>
@@ -60,9 +71,16 @@ class RoomsForm extends Component {
     }
 }
 
+function mapStateToProps({form: {rooms}}) {
+    const values =  _.has(rooms, 'values') ? rooms.values : {};
+    return {
+        fieldValues: values
+    }
+}
+
 // Decorate the form component
 RoomsForm = reduxForm({
     form: 'rooms' // a unique name for this form
 })(RoomsForm);
 
-export default RoomsForm;
+export default connect(mapStateToProps)(RoomsForm);

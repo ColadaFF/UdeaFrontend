@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware, compose} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {rootReducer, rootEpic} from './rootReducer';
 import DevTools from '../components/devTools/devToolsComponent';
 import {loadState} from '../middleware/persistentState/persistentState';
