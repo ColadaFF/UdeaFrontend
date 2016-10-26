@@ -29,7 +29,7 @@ class LeftBarComponent extends Component {
                 </ListItem>
                 <ListItem
                     onTouchTap={this.props.toggleLeftBar}
-                    containerElement={<Link to='/rooms/add'/>}
+                    containerElement={<Link to='/rooms/list'/>}
                     linkButton={true}
                 >
                     Salones

@@ -3,6 +3,7 @@ import {Router, Route, browserHistory} from 'react-router';
 import AppComponent from './components/main/appComponent';
 import TeachersForm  from './components/forms/teachers/teachersFormComponent';
 import RoomsForm  from './components/forms/rooms/roomsFormComponent';
+import RoomsTable  from './components/forms/rooms/roomsTable';
 import CoursesForm  from './components/forms/courses/coursesFormComponent';
 
 export default (
@@ -13,6 +14,8 @@ export default (
             </Route>
             <Route path="rooms">
                 <Route path="add" component={RoomsForm}/>
+                <Route path="list" component={RoomsTable}/>
+                <Route path="edit/:roomId" component={RoomsForm}/>
             </Route>
             <Route path="courses">
                 <Route path="add" component={CoursesForm}/>

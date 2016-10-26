@@ -32,19 +32,19 @@ export const itemsRoomType = [
         text: 'Auditorio'
     },
     {
-        value: 'computersRoom',
+        value: 'computers',
         text: 'Sala de computo'
     },
     {
-        value: 'drawingRoom',
+        value: 'drawing',
         text: 'Sala de dibujo'
     },
     {
-        value: 'specialRoom',
+        value: 'special',
         text: 'Aula especial'
     },
     {
-        value: 'labRoom',
+        value: 'lab',
         text: 'Laboratorio'
     }
 ];
